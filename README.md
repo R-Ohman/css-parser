@@ -1,6 +1,6 @@
 # css-parser
 
-A simple engine for CSS processing.
+A simple engine for CSS processing without using the Standard Template Library.
 Reads CSS sections interspersed with command sections from the standard input. 
 
 Available commands:
