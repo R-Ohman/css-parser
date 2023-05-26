@@ -1,18 +1,18 @@
 # css-parser
 
-A simple engine for CSS processing without using the Standard Template Library.
-Reads CSS sections interspersed with command sections from the standard input. 
+A simple engine for CSS processing without using the Standard Template Library. Reads CSS sections interspersed with command sections from the standard input.
 
-Available commands:
+## Available commands
 
-1) **** - resume CSS reading;
-2) ? - print the number of CSS sections;
-3) i,S,? - print the number of selectors for section number i (numbers start with 1), if there is no such block skip;
-4) i,A,? - print the number of attributes for section no. i, if there is no such block or section skip;
-5) i,S,j - output the j-th selector for the i-th block (section and attribute numbers start with 1) if there is no section or selector skip;
-6) i,A,n - output for the i-th section the value of the attribute named n, if there is no such skip;
-7) n,A,? - print the total (for all blocks) number of occurrences of the attribute named n. (Within a single block, duplicates should be removed at the loading stage). 0 is possible;
-8) z,S,? - print the total (for all blocks) number of occurrences of the selector z. 0 is possible;
-9) z,E,n - print the value of the attribute named n for selector z, in case of multiple occurrences of selector z we take the last one. If none, skip;
-10) i,D,* - delete the entire section i (i.e. separators+attributes), when done correctly write out deleted;
-11) i,D,n - remove the attribute named n from the i-th section, if the operation leaves the section empty it should also be removed (along with any selectors), when done correctly write deleted.
+- `****` - Resume CSS reading.
+- `?` - Print the number of CSS sections.
+- `i,S,?` - Print the number of selectors for section number `i` (numbers start with 1). If there is no such block, skip.
+- `i,A,?` - Print the number of attributes for section number `i`. If there is no such block or section, skip.
+- `i,S,j` - Output the `j`-th selector for the `i`-th block (section and attribute numbers start with 1). If there is no section or selector, skip.
+- `i,A,n` - Output the value of the attribute named `n` for the `i`-th section. If there is no such block or section, skip.
+- `n,A,?` - Print the total (for all blocks) number of occurrences of the attribute named `n`. Within a single block, duplicates should be removed at the loading stage. 0 is possible.
+- `z,S,?` - Print the total (for all blocks) number of occurrences of the selector `z`. 0 is possible.
+- `z,E,n` - Print the value of the attribute named `n` for selector `z`. In case of multiple occurrences of selector `z`, we take the last one. If none, skip.
+- `i,D,*` - Delete the entire section `i` (i.e., separators + attributes). When done correctly, write out "deleted".
+- `i,D,n` - Remove the attribute named `n` from the `i`-th section. If the operation leaves the section empty, it should also be removed (along with any selectors). When done correctly, write "deleted".
+
